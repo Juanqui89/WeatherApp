@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      const url = `https://api.openweathermap.org/data/2.5/weather?id=4568138&lang=es&appid=d154fe80169fe7875d3c64b445b60b2c`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?id=4568138&lang=es&appid="TU_API-KEY_AQUI"`;
 
       console.log(position);
 
