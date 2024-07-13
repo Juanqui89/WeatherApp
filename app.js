@@ -8,7 +8,6 @@ window.addEventListener("load", () => {
     let vientos = document.getElementById("vientos");
     let iconoAnimado = document.getElementById("icono-animado");
   
-    // const apiKey = d154fe80169fe7875d3c64b445b60b2c;
   
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
