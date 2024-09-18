@@ -49,7 +49,7 @@ const App = () => {
 
   return (
     <>
-      <h1 className="text-3xl text-center mt-[100px]">Weather App</h1>
+      <h1 className="text-3xl text-center mt-[50px]">Weather App</h1>
       <form onSubmit={handleSubmit} className="text-center">
         <input
           type="search"
@@ -60,13 +60,13 @@ const App = () => {
         />
         <button
           type="submit"
-          className="bg-[#c31412] p-[5px] rounded-[5px] cursor-pointer mx-[5px] hover:bg-[#a11212] w-[90px] xs:text-[1em] sm:text-[1.1em] md:text-[1.2em] lg:text-[1.3em]"
+          className="bg-[#c31412] p-[5px] rounded-[5px] cursor-pointer mx-[5px] hover:bg-[#a11212] w-[90px] xs:text-[1em] sm:text-[1.1em] md:text-[1.2em] lg:text-[1.3em] focus:outline-none"
         >
           Search
         </button>
       </form>
       {search && (
-        <section className="text-center mt-[30px] bg-[#a11212] mx-auto rounded-[5px] py-[25px] w-[200px] h-auto xs:text-[1em] sm:text-[1.1em] md:w-[280px] md:text-[1.2em] lg:w-[300px] lg:text-[1.3em]">
+        <section className="text-center mt-[30px] bg-[#a11212] mx-auto rounded-[5px] py-[25px] w-[200px] h-auto mb-[30px] xs:text-[1em] sm:text-[1.1em] md:w-[280px] md:text-[1.2em] lg:w-[300px] lg:text-[1.3em]">
            <img
             src={`https://openweathermap.org/img/wn/${search.weather[0].icon}@2x.png`}
             alt={search.weather[0].description}
