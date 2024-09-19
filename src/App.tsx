@@ -5,17 +5,17 @@ import Footer from "./assets/components/Footer";
 interface Data {
   main: {
     temp: number;
-    temp_max: number; 
+    temp_max: number;
     temp_min: number;
     humidity: number;
   };
   weather: {
-    icon: string; 
-    description: string 
+    icon: string;
+    description: string;
   }[];
-  wind:{
-    speed:number;
-  }
+  wind: {
+    speed: number;
+  };
   name: string;
 }
 const App = () => {
@@ -39,7 +39,7 @@ const App = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    fetchdata(city); 
+    fetchdata(city);
   };
 
   const capitalize = (string: string) => {
@@ -67,16 +67,28 @@ const App = () => {
       </form>
       {search && (
         <section className="text-center mt-[30px] bg-[#a11212] mx-auto rounded-[5px] py-[25px] w-[200px] h-auto mb-[30px] xs:text-[1em] sm:text-[1.1em] md:w-[280px] md:text-[1.2em] lg:w-[300px] lg:text-[1.3em]">
-           <img
+          <img
             src={`https://openweathermap.org/img/wn/${search.weather[0].icon}@2x.png`}
             alt={search.weather[0].description}
             className="mt-[10px] mx-auto"
           />
           <h1>{search.name}</h1>
-          <p>Temperature: {((search.main.temp - 273.15) * 9 / 5 + 32).toFixed()} °F</p>
-          <p>Temperature Min: {((search.main.temp_min - 273.15) * 9 / 5 + 32).toFixed()} °F</p>
-          <p>Temperature Max: {((search.main.temp_max - 273.15) * 9 / 5 + 32).toFixed()} °F</p>
-          <p>Description: {capitalize(search.weather[0].description.toLocaleUpperCase())}</p>
+          <p>
+            Temperature:{" "}
+            {(((search.main.temp - 273.15) * 9) / 5 + 32).toFixed()} °F
+          </p>
+          <p>
+            Temperature Min:{" "}
+            {(((search.main.temp_min - 273.15) * 9) / 5 + 32).toFixed()} °F
+          </p>
+          <p>
+            Temperature Max:{" "}
+            {(((search.main.temp_max - 273.15) * 9) / 5 + 32).toFixed()} °F
+          </p>
+          <p>
+            Description:{" "}
+            {capitalize(search.weather[0].description.toLocaleUpperCase())}
+          </p>
           <p>Humidity: {search.main.humidity}%</p>
           <p>Wind Speed: {search.wind.speed} mph</p>
         </section>
